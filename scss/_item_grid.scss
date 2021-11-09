@@ -1,0 +1,24 @@
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+  position: relative;
+  background-color: $main-color;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background: inherit;
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
+    transition: transform 3s cubic-bezier(0.2, 1, 0.3, 2);
+  }
+}
